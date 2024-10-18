@@ -1,0 +1,86 @@
+<div class="bg-image">
+  <form [formGroup]="ReservationForm"  class="form container mt-5">
+    <div class="container" style="background-color: #333;">
+    <div class="mb-3" style="padding-bottom: 20px;padding-top: 20px;">
+      <label for="exampleInputnom1" class="form-label">Nom</label>
+      <input formControlName="nom" name="nom" type="text" class="form-control" id="exampleInputnom1" placeholder="Nom"  required >
+      <div  class="inv_form" *ngIf="ReservationForm.get('nom')?.invalid && (ReservationForm.get('nom')?.dirty||ReservationForm.get('nom')?.touched )"   >
+        <span *ngIf="ReservationForm.get('nom')?.errors?.['required']">
+          Entrer votre nom
+        </span>
+        <span *ngIf="ReservationForm.get('nom')?.errors?.['maxlength']" style="font-size: 50px;">
+          maximum 20 caractéres 
+        </span>
+        <span *ngIf="ReservationForm.get('nom')?.errors?.['minlength']">Minimum 2  caractéres</span>
+      </div>
+    </div>
+    
+    <div class="mb-3" style="padding-bottom: 10px;">
+      <label for="exampleInputprenom" class="form-label">Prénom</label>
+      <input formControlName="prenom" name="prenom" type="text" class="form-control" id="exampleInputPassword1" placeholder="Prénom" required  >
+      <div *ngIf="ReservationForm.get('prenom')?.invalid && (ReservationForm.get('prenom')?.dirty || ReservationForm.get('prenom')?.touched)" class="inv_form" >
+        <span *ngIf="ReservationForm.get('prenom')?.errors?.['required']">
+          Entrer votre prenom
+        </span>
+        <span *ngIf="ReservationForm.get('prenom')?.errors?.['maxlength']" >
+          maximum 20 caractéres 
+        </span>
+        <span *ngIf="ReservationForm.get('prenom')?.errors?.['minlength']">
+          Minimum 2  caractéres</span>
+      </div>
+    </div>
+    <div class="mb-3" style="padding-bottom: 20px;">
+      <label for="exampleInputnum1" class="form-label">Num de carte</label>
+      <input formControlName="Num" name="Num" type="number" step="1" class="form-control" id="exampleInputnum1" placeholder="Num de la carte " required >   
+      <div *ngIf="ReservationForm.get('Num')?.invalid && (ReservationForm.get('Num')?.dirty ||ReservationForm.get('Num')?.touched)" class="inv_form">
+        <span *ngIf="ReservationForm.get('Num')?.errors?.['required']">
+          Entrer votre Num de carte 
+        </span>
+        <span *ngIf="ReservationForm.get('Num')?.errors?.['maxlength']">
+          Num non validé
+        </span>
+        <span *ngIf="ReservationForm.get('Num')?.errors?.['pattern']">
+            Num non validé
+        </span>
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="year">Année : </label>
+        <select id="year" formControlName="year" required>
+          <option value="" disabled selected>Choisissez une année</option>
+          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
+        <div *ngIf="ReservationForm.get('year')?.invalid && ReservationForm.get('year')?.touched">
+          <span *ngIf="ReservationForm.get('year')?.errors?.['required']" style="color: red;">Champ requis</span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="month">Mois :</label>
+        <select id="month" formControlName="month" required>
+          <option value="" disabled selected>Choisissez un mois</option>
+          <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+        </select>
+        <div *ngIf="ReservationForm.get('month')?.invalid && ReservationForm.get('month')?.touched">
+          <span *ngIf="ReservationForm.get('month')?.errors?.['required']" style="color: red;">Champ requis</span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="day">Jour :</label>
+        <select id="day" formControlName="day" required>
+          <option value="" disabled selected>Choisissez un jour</option>
+          <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+        </select>
+        <div *ngIf="ReservationForm.get('day')?.invalid && ReservationForm.get('day')?.touched">
+          <span *ngIf="ReservationForm.get('day')?.errors?.['required']" style="color: red;">Champ requis</span>
+        </div>
+      </div>
+    <div class="mb-3 form-check" style="padding-bottom: 20px;">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button (click)="submitForm()"type="submit" class="btn btn-primary container mb-3" >Réserver</button>
+    <button (click)="supprimerForm()" type="button" class="btn btn-primary container mb-5">Supprimer</button>
+    <button (click)="gotologin()" type="button" class="btn btn-primary container mb-5">Retour</button>
+  </div>
+  </form>
+</div>

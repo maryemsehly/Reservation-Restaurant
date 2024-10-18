@@ -1,0 +1,17 @@
+<div class="bg-image">
+  <form [formGroup]="contactForm" class="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom</label>
+      <input formControlName="nom" type="text" class="form-control" id="nom" placeholder="Entrez votre nom" required>
+    </div>
+    <div class="mb-3">
+      <label for="prenom" class="form-label">Prénom</label>
+      <input formControlName="prenom" type="text" class="form-control" id="prenom" placeholder="Entrez votre prénom" required>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea formControlName="message" class="form-control" id="message" placeholder="Entrez votre message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+  </form>
+</div>

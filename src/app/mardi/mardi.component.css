@@ -1,0 +1,62 @@
+.all{
+  background-image: url('src\assets\reserve.jpg');
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(210, 197, 197, 0.986);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  max-height: 800px;
+  border: solid 2px #0056b3;
+}
+
+.menu-title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.menu-list {
+list-style: none;
+}
+
+.menu-item {
+margin-bottom: 30px;
+border-bottom: 1px solid #aebfd2;
+padding-bottom: 15px;
+}
+
+.menu-item-title {
+font-size: 20px;
+margin-bottom: 5px;
+color: #ffffff;
+font-weight: bold;
+}
+
+.menu-item-description {
+font-size: 16px;
+color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+.menu {
+  padding: 10px;
+  max-width: 100%;
+  border-radius: 0;
+}
+}

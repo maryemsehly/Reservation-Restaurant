@@ -1,0 +1,46 @@
+<div class="bg-image">
+  <form [formGroup]="monFormulaire"  target="_blank" class="form container mt-5">
+    <div class="container" style="background-color: #333;">
+      <div class="mb-3" style="padding-bottom: 50pxpx;">
+        <label for="exampleInputemail2" class="form-label">Email</label>
+        <input formControlName="email" name="email" type="email" class="form-control" id="exampleInputemail2" placeholder="email" required>
+        <div *ngIf="monFormulaire.get('email')?.invalid && (monFormulaire.get('email')?.dirty || monFormulaire.get('email')?.touched)" class="inv_form">
+          <span *ngIf="monFormulaire.get('email')?.errors?.['required']">
+            Entrer votre email
+          </span>
+          <span *ngIf="monFormulaire.get('email')?.errors?.['email']">
+            email non valide
+          </span>
+        </div>
+      </div>
+      <div class="mb-3" style="padding-bottom: 20px;">
+        <label for="exampleInpassword2" class="form-label">Mot de passe</label>
+        <input formControlName="password" name="password" type="password" class="form-control" id="exampleInputpassword2" placeholder="mot de passe" required>
+        <div *ngIf="monFormulaire.get('password')?.invalid && (monFormulaire.get('password')?.dirty || monFormulaire.get('password')?.touched)" class="inv_form">
+          <span *ngIf="monFormulaire.get('password')?.errors?.['required']">
+            Entrer votre mot de passe
+          </span>
+          <span *ngIf="monFormulaire.get('password')?.errors?.['minlength']">
+            Minimum 6 caractères
+          </span>
+          <span *ngIf="monFormulaire.get('password')?.errors?.['maxlength']">
+            Maximum 20 caractères
+          </span>
+        </div>
+      </div>
+      <div class="mb-3 form-check" style="padding-bottom: 20px;">
+        <input type="checkbox" class="form-check-input" id="exampleCheck2">
+        <label class="form-check-label" for="exampleCheck2" style="color: white;">Check me out</label>
+      </div>
+      <button (click)="submitForm()" type="submit" class="btn btn-primary container mb-3">Se connecter</button>
+      <button (click)="supprimerForm()" type="button" class="btn btn-primary container mb-5">Supprimer</button>
+      <br>
+      <div class="row d-flex justify-content ">
+      <a href="/sec-app" > cree un compte  </a>
+      </div>
+      
+    
+   </div>
+   
+  </form>
+</div>

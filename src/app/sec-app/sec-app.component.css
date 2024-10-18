@@ -1,0 +1,52 @@
+.bg-image {
+    background-image: url('src\assets\reserve.jpg');
+    background-size: cover;
+    background-position: center;
+    position:absolute;
+    top: 63.5px;
+    left: 0;
+    width: 100%;
+   
+  }
+  .form.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #0056b3;
+    border-radius: 8px;
+    background-color: #ffffffff;
+  }
+  .form-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(0, 0, 0); 
+   
+  }
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #0056b3;
+    border-radius: 4px;
+    font-size: 16px;
+    color: black; 
+    background-color: rgba(0, 0, 0, 0.107);
+  }
+  
+  .inv_form span {
+    color: red;
+    font-size: 14px;
+  }
+  .form-check-input {
+    margin-right: 5px;
+  }
+  .btn-primary {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background-color: #007bff; 
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer
+  }
